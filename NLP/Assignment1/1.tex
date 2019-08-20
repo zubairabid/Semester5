@@ -10,7 +10,9 @@
 \usepackage{graphicx}
 \usepackage[left=1.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
-\usepackage{qtree}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+
 
 \usepackage[document]{ragged2e}
 
@@ -32,27 +34,285 @@
 	\begin{enumerate}
 		\item The robot picked the red cube.
 		
+		\Tree[.S	[.NP	[.det The ]
+							[.Noun robot ] ]
+					[.VP	[.Verb picked ]
+							[.NP	[.det the ]
+									[.Adj red ]
+									[.Noun cube ] ] ] ]		
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm,]
+
+		\Tree[.picked
+						\edge node[auto=left] {$n-sub$}; 
+						[.robot	
+								\edge node[auto=left] {$det$};
+								[.the ] 
+						]
+						\edge node[auto=left] {$d-obj$}; 
+						[.cube	
+								\edge node[auto=left] {$det$};
+								[.the ]
+								\edge node[auto=left] {$d-mod$};
+								[.red ] 
+						]						
+%						\edge nodee[auto=left] {$d-obj$};
+%						[.cube
+%								\edge node[auto=left] {$det$};
+%								[.the ]
+%								\edge node[auto=left] {$d-mod$};
+%								[.red ]	
+%						]
+		]		
+		
+		\end{tikzpicture}		
+		
+				
 		\item He saw the red block near the blue pyramid.
 		
-		\item Put the red block near the blue pyramid on green cylinder.
+		\Tree[.S
+					[.NP
+						[.pronoun He ] 
+					]
+					[.VP
+						[.V saw ]
+						[.NP 
+							[.NP
+								[.det the ]
+								[.NP
+									[.adj red ]
+									[.N block ]								
+								]
+							]							
+							[.PP
+								[.prep near ]
+								[.NP
+									[.det the ]
+									[.NP 
+										[.adj blue ]
+										[.N pyramid ]						
+									]								
+								]
+							]						
+						]
+					]		
+		]
+		
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.saw
+						\edge node[auto=left] {$n-sub$}; 
+						[.he ]
+						\edge node[auto=left] {$d-obj$}; 
+						[.block	
+								\edge node[auto=left] {$det$};
+								[.the ]
+								\edge node[auto=left] {$o-mod$};
+								[.red ]
+								\edge node[auto=left] {$prep$};
+								[.near
+									\edge node[auto=left] {$p-obj$};											[.pyramid 
+										\edge node[auto=left] {$det$};												[.the ]
+										\edge node[auto=left] {$s-mod$};											[.blue ] 
+									]
+								]
+						]
+		]		
+		\end{tikzpicture}	
+		
+		
+		\item Put the red block near the blue pyramid on the green cylinder.
+				
+		\Tree[.S
+			[.VP [.V Put ] ]
+			[.NP 
+				[.NP 
+					[.det the ]
+					[.NP
+						[.adj red ]
+						[.Noun block ] 
+					]
+				]
+				[.PP
+					[.prep near ]
+					[.NP 
+						[.det the ]
+						[.NP
+							[.adj blue ]
+							[.Noun pyramid ]
+						]
+					]
+				]
+			]
+			[.PP 
+				[.prep on ]
+				[.NP
+					[.det the ]
+					[.NP
+						[.adj green ]
+						[.Noun cylinder ]					
+					]				
+				]
+			]
+		]
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=1cm]
+
+		\Tree[.put
+						\edge node[auto=left] {$d-obj$}; 
+						[.block	
+								\edge node[auto=left] {$det$};
+								[.the ]
+								\edge node[auto=left] {$o-mod$};
+								[.red ]
+								\edge node[auto=left] {$prep$};
+								[.near
+									\edge node[auto=left] {$p-obj$};
+									[.pyramid ]
+									\edge node[auto=left] {$det$};															[.the ]
+									\edge node[auto=left] {$s-mod$};														[.blue ] 
+								]
+						]
+						\edge node[auto=left] {$prep$};
+						[.on
+								\edge node[auto=left] {$p-obj$};
+								[.cylinder 
+									\edge node[auto=left] {$det$};															[.the ]
+									\edge node[auto=left] {$s-mod$};														[.green ]
+								] 						
+						]
+		]		
+		\end{tikzpicture}	
+		
+		
 
 		\item The robot placed the red block near the blue pyramid.
-		
-		\Tree[.S 	[.NP 	[.det The ]
-							[.Noun robot ] ]
-					[.VP 	[.Verb placed ]
-							[\qroof{the red block}.NP ]
-							[.PP	[.Prep ]
-									[\qroof{the blue pyramid}.NP ] ] ] ]
+	
+		\Tree[.S
+			[.NP
+				[.det the ]
+				[.Noun robot ]
+			]
+			[.VP
+				[.Verb placed ]
+				[.NP
+					[.det the ]
+					[.NP
+						[.adj red ]
+						[.Noun block ]
+					] 
+				]
+				[.PP
+					[.Prep near ]
+					[.NP
+						[.det the ]
+						[.NP
+							[.adj blue ]
+							[.Noun pyramid ]
+						]
+					] 
+				]
+			]
+		]		
 					
 		$ $\\
 		$ $\\
 		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.placed
+						\edge node {$n-sub$}; 
+						[.robot	
+								\edge node {$det$};
+								[.the ]
+						]						
+						\edge node {$d-obj$}; 
+						[.block	
+								\edge node {$det$};
+								[.the ]
+								\edge node {$o-mod$};
+								[.red ]
+						]
+						\edge node {$prep$};
+						[.near
+								\edge node {$p-obj$}; 
+								[.pyramid
+									\edge node {$det$};
+									[.the ]
+									\edge node {$o-mod$};
+									[.blue ]
+								] 						
+						]
+		]		
+		\end{tikzpicture}	
 		
-		\Tree[.placed	[.AGENT {The robot} ]
-						[.PATIENT {the red block} ]
-						[.REFERENCE {the blue pyramid} ] ]
+		
+		
 		\item He lifted a yellow cylinder balanced on a green cylinder.
+		
+		\Tree[.S
+				[.NP [.pronoun he ] ]		
+				[.VP
+					[.V lifted ]
+					[.S'  
+						[.NP 
+							[.det a ]
+							[.NP
+								[.adj yellow ]
+								[.N cylinder ]							
+							]
+						]
+						[.VP  
+							[.V balanced ]
+							[.PP
+								[.prep on ]
+								[.N
+									[.det a ]
+									[.NP
+										[.adj green ]
+										[.N cylinder ]
+									]
+								]
+							]
+						]					
+					]
+				]
+		]
+					
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.balanced
+						\edge node {$v-mod$}; 
+						[.cylinder	
+								\edge node {$det$};
+								[.a ]
+								\edge node {$o-mod$};
+								[.yellow ]
+								\edge node {$d-obj$};
+								[.lifted
+									\edge node {$n-sub$};
+									[.he ]							
+								]								
+						]						
+						\edge node {$prep$}; 
+						[.on
+								\edge node {$p-obj$};
+								[.cylinder
+									\edge node {$det$};
+									[.a ]
+									\edge node {$o-mod$};
+									[.green ]								
+								]
+						]
+		]		
+		\end{tikzpicture}
 		
 	\end{enumerate}	
 	
@@ -61,13 +321,258 @@
 	\begin{enumerate}
 		\item Ram called Mohan after eating a mango.
 		
+		\Tree[.S
+				[.NP
+					[.N Ram ]
+				]
+				[.VP
+					[.V called ]
+					[.NP [.N Mohan ] ]
+					[.AdvP
+						[.adverb after ]
+						[.VP
+							[.V eating ]
+							[.NP
+								[.det a ]
+								[.N mango ]
+							]
+						]
+					]
+				]		
+		]
+					
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.called
+						\edge node {$n-sub$}; 
+						[.Ram ]
+						\edge node {$d-obj$}; 
+						[.Mohan ]						
+						\edge node {$adv-mod$}; 
+						[.after
+								\edge node {$v-mod$};
+								[.eating
+									\edge node {$d-obj$};
+									[.mango
+										\edge node {$det$};
+										[.a ]
+									]													
+								]
+						]
+		]		
+		\end{tikzpicture}		
+		
+		
+		
 		\item Ram called Mohan to eat a mango.
 		
+		\Tree[.S
+				[.NP
+					[.N Ram ]
+				]
+				[.VP
+					[.V called ]
+					[.NP [.N Mohan ] ]
+					[.VP
+						[.VP
+							[.VAux to ]
+							[.V eat ]
+						]
+						[.NP
+							[.det a ]
+							[.N mango ]
+						]
+					]
+				]		
+		]
+					
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.called
+						\edge node {$n-sub$}; 
+						[.Ram ]
+						\edge node {$d-obj$}; 
+						[.Mohan ]						
+						\edge node {$v-mod$}; 
+						[.eat
+							\edge node {$v-aux$};
+							[.to ]
+							\edge node {$d-obj$};
+							[.mango
+								\edge node {$det$};
+								[.a ]
+							]							
+						]
+		]		
+		\end{tikzpicture}		
+		
+		
+		
 		\item Ram asked Mohan for a knife to cut the mango.
+
+		\Tree[.S
+				[.NP
+					[.N Ram ]
+				]
+				[.VP
+					[.V asked ]
+					[.NP [.N Mohan ] ]
+					[.Comp' 
+						[.Comp for ]
+						[.S' 
+							[.NP
+								[.det a ]
+								[.Noun knife ]
+							]
+							[.VP
+								[.VP
+									[.VAux to ]
+									[.Verb cut ]
+								]
+								[.NP
+									[.det the ]
+									[.N mango ]
+								]
+							]
+						]
+					]					
+				]		
+		]
+					
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.asked
+						\edge node {$n-sub$}; 
+						[.Ram ]
+						\edge node {$d-obj$}; 
+						[.Mohan ]						
+						\edge node {$comp$}; 
+						[.for
+							\edge node {$v-mod$};
+							[.cut
+								\edge node {$n-sub$}; 
+								[.knife
+									\edge node {$det$};
+									[.a ]
+								]
+								\edge node {$d-obj$}; 
+								[.mango 
+									\edge node {$det$};
+									[.the ]
+								]	
+								\edge node {$v-aux$};
+								[.to ]
+							]						
+						]
+		]		
+		\end{tikzpicture}		
+		
+		
 		
 		\item The hunter saw a running lion.
 		
+		\Tree[.S
+				[.NP
+					[.det The ]
+					[.N hunter ]
+				]
+				[.VP
+					[.V saw ]
+					[.NP 
+						[.det a ]
+						[.NP
+							[.Adj running ]
+							[.Noun lion ]
+						] 
+					]				
+				]		
+		]
+					
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.saw
+						\edge node {$n-sub$}; 
+						[.hunter 
+							\edge node {$det$};
+							[.the ]
+						]
+						\edge node {$d-obj$}; 
+						[.lion 
+							\edge node {$det$};
+							[.a ]
+							\edge node {$v-mod$};
+							[.running ]
+						]						
+		]		
+		\end{tikzpicture}
+		
+		
+		
+		
+		
 		\item The hunter saw a lion running towards him.
+		
+		\Tree[.S
+				[.NP
+					[.det The ]
+					[.N hunter ]
+				]
+				[.VP
+					[.V saw ]
+					[.S' 
+						[.NP 
+							[.det a ]
+							[.Noun lion ] 
+						]
+						[.VP
+							[.V running ]
+							[.PP
+								[.prep towards ]
+								[.NP [.pronoun him ] ]
+							]
+						]
+					]			
+				]		
+		]
+					
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm]
+
+		\Tree[.saw
+						\edge node {$n-sub$}; 
+						[.hunter 
+							\edge node {$det$};
+							[.the ]
+						]
+						\edge node {$d-obj$}; 
+						[.lion 
+							\edge node {$det$};
+							[.a ]
+						]
+						\edge node {$v-mod$}; 
+						[.running 
+							\edge node {$prep$};
+							[.towards
+								\edge node {$p-obj$};
+								[.him ]
+							]
+						]												
+		]		
+		\end{tikzpicture}
 		
 		
 	\end{enumerate}			
