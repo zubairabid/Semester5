@@ -1,0 +1,11 @@
+1. Extra 5% weightage (possibly) for assignments in Vyper over Solidity
+2. Class in other languages is similar to contract in solidity
+3. tests for code will have about 30% weightage for each assignment
+4. Contract is basic element of code
+    a. We can interface with these contracts from the environment itself, or from outside (using web3 api and JS code to connect to it).
+    b. Can also call functions of one contract from another.
+    c. Main data running - the business logic is in Solidity, and the rest of it is in the webapp. 
+    d. Metamask is cool
+5. Any change made on the ethereum network is a transaction
+6. 10^-18 is weigh?
+
