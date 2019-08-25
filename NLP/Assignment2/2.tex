@@ -1,0 +1,233 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+%\setmainfont{???}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=1.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+
+
+\usepackage[document]{ragged2e}
+
+
+\usepackage{xcolor}
+\definecolor{hlit}{rgb}{0.5,0,1}
+\definecolor{diff}{rgb}{0.1,0.1,0.5}
+\definecolor{rlit}{rgb}{1,0,0}
+
+\title{NLP, Assignment 2}
+\author{Zubair Abid, 20171076}
+\date{}
+
+\begin{document}
+	\maketitle
+
+	\section{Sentences}
+	\begin{enumerate}
+		\item The mother goes to school to drop the child.
+		
+		\item The mother goes to school for dropping the child.
+		
+		\item The mother goes to school having dropped the child.
+		
+	\end{enumerate}		
+	
+	\section{Phase Structure and Dependency Tree for each sentence}
+
+	\begin{enumerate}
+		\item The mother goes to school to drop the child.
+		
+		\Tree[.S	[.NP	
+						[.det The ]
+						[.Noun mother ] 
+					]
+					[.VP	
+						[.VBZ goes ]
+						[.PP
+							[.P to ]
+							[.NP [.Noun School ] ] ]
+						[.S 
+							[.VP
+								[.TO to ]
+								[.VP 
+									[.Verb drop ]
+									[.NP 
+										[.det the ]
+										[.Noun child ]
+									]
+								]
+							]
+						] 
+					] 
+			]		
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm,]
+
+		\Tree[.goes
+						\edge node[auto=right] {$n-sub$}; 
+						[.mother 
+								\edge node[auto=left] {$det$};
+								[.the ] 
+						]
+						\edge node[auto=right] {$x-comp$}; 
+						[.drop	
+								\edge node[auto=left] {$d-obj$};
+								[.child 
+									\edge node[auto=left] {$det$};
+									[.the ]
+								]
+								\edge node[auto=left] {$aux$};
+								[.to ] 
+						]
+						\edge node[auto=left] {$nmod$}; 
+						[.school	
+								\edge node[auto=left] {$case$};
+								[.to ]
+						]
+		]		
+		
+		\end{tikzpicture}		
+			
+		$ $\\
+		$ $\\
+		$ $\\
+				
+		\item The mother goes to school for dropping the child.
+		
+		\Tree[.S	[.NP	
+						[.det The ]
+						[.Noun mother ] 
+					]
+					[.VP	
+						[.VBZ goes ]
+						[.PP
+							[.P to ]
+							[.NP [.Noun School ] ] ]
+						[.S 
+							[.VP
+								[.IN for ]
+								[.VP 
+									[.Verb dropping ]
+									[.NP 
+										[.det the ]
+										[.Noun child ]
+									]
+								]
+							]
+						] 
+					] 
+			]		
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm,]
+
+		\Tree[.goes
+						\edge node[auto=right] {$n-sub$}; 
+						[.mother 
+								\edge node[auto=left] {$det$};
+								[.the ] 
+						]
+						\edge node[auto=right] {$x-comp$}; 
+						[.dropping	
+								\edge node[auto=left] {$d-obj$};
+								[.child 
+									\edge node[auto=left] {$det$};
+									[.the ]
+								]
+								\edge node[auto=left] {$aux$};
+								[.for ] 
+						]
+						\edge node[auto=left] {$nmod$}; 
+						[.school	
+								\edge node[auto=left] {$case$};
+								[.to ]
+						]
+		]		
+		
+		\end{tikzpicture}	
+			
+		$ $\\
+		$ $\\
+		$ $\\
+		
+		\item The mother goes to school having dropped the child.
+				
+		\Tree[.S	[.NP	
+						[.det The ]
+						[.Noun mother ] 
+					]
+					[.VP	
+						[.VBZ goes ]
+						[.PP
+							[.P to ]
+							[.NP [.Noun School ] ] ]
+						[.S 
+							[.VP
+								[.VBG having ]
+								[.VP 
+									[.Verb dropped ]
+									[.NP 
+										[.det the ]
+										[.Noun child ]
+									]
+								]
+							]
+						] 
+					] 
+			]		
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm,]
+
+		\Tree[.goes
+						\edge node[auto=right] {$n-sub$}; 
+						[.mother 
+								\edge node[auto=left] {$det$};
+								[.the ] 
+						]
+						\edge node[auto=right] {$x-comp$}; 
+						[.dropped	
+								\edge node[auto=left] {$d-obj$};
+								[.child 
+									\edge node[auto=left] {$det$};
+									[.the ]
+								]
+								\edge node[auto=left] {$aux$};
+								[.having  ] 
+						]
+						\edge node[auto=left] {$nmod$}; 
+						[.school	
+								\edge node[auto=left] {$case$};
+								[.to ]
+						]
+		]		
+		
+		\end{tikzpicture}	
+			
+		$ $\\
+		$ $\\
+		$ $\\
+		
+	\end{enumerate}	
+	
+	\section{Context Free Grammar rules to cover these}
+	
+	\section{Feature Specifications covering different Tense-Aspects of the verb drop}
+	
+	\section{Handling agreement between mother and go using feature specifications}
+	
+	
+	
+	
+\end{document}
