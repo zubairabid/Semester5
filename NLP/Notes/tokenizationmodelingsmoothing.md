@@ -18,4 +18,7 @@ token: a single surface form word
 Core principle: Do not lose information at this phase. Input will be frozen.
 *Suggestion*: break everything, reconstruction is fine.
 
+At this point in the lecture, I was told to shut down my laptop and thus have no recollection of what happened after.
+
+Henceforth, the notes end here.
 
