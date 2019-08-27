@@ -6,6 +6,7 @@
 \usepackage{xltxtra}
 %\setmainfont{???}
 \usepackage{amsmath}
+\usepackage{blkarray}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -172,7 +173,7 @@
 						[.PP
 							[.P to ]
 							[.NP [.Noun School ] ] ]
-						[.S 
+						[.S
 							[.VP
 								[.VBG having ]
 								[.VP 
@@ -223,12 +224,166 @@
 	\end{enumerate}	
 	
 	\section{Context Free Grammar rules to cover these}
+    \begin{enumerate}
+
+        \item S --> NP VP
+        \item NP --> det Noun
+        \item VP --> Verb NP
+        \item VP --> TO VP
+        \item VP --> VBZ PP S
+        \item VP --> VBG VP
+        \item VP --> IN VP
+        \item PP --> P NP
+        \item NP --> Noun
+        \item S' --> VP
+
+    \end{enumerate}
+
 	
 	\section{Feature Specifications covering different Tense-Aspects of the verb drop}
+    \textbf{Drop} occurs in the different tense-aspects:\\
+    \textit{drop}, \textit{dropped}, and \textit{dropping}
+
+\[
+\textsc{drop}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{drop} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{present}\\
+  \textsc{case:} & \textit{to}\\
+  \textsc{aspect:} & \textit{simple}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+
+\[
+\textsc{dropped}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{drop} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{past}\\
+  \textsc{case:} & \textit{to}\\
+  \textsc{aspect:} & \textit{perfect}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+\[
+\textsc{dropping}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{drop} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{continous}\\
+  \textsc{case:} & \textit{for}\\
+  \textsc{aspect:} & \textit{progressive}\\
+\end{bmatrix}
+\end{bmatrix}
+\]
+$ $\\
+$ $\\
+$ $\\
+		This helps us deal with the number of rules we have, somewhat.\\
+		((VP --> TO VP)), ((VP --> IN VP)), ((VP --> VBG VP)) get reduced.\\
+		\[
+\textsc{VP} ->
+\begin{bmatrix} 
+\textsc{root} \\
+\textsc{case} \\
+\textsc{aspect} \\
+\end{bmatrix}
+\]
+		We unify the rules, as the general rule explains all the various ones and we can apply the correct one by looking up the feature specification table.\\
+
 	
 	\section{Handling agreement between mother and go using feature specifications}
 	
-	
-	
+	\[
+\textsc{mother}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{mother} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+\[
+\textsc{go}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{go} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{present}\\
+  \textsc{aspect:} & \textit{simple}\\
+\end{bmatrix}
+\end{bmatrix}
+\]
+		Comparing against the forms used:\\
+		
+	\[
+\textsc{the mother}=
+\begin{bmatrix}
+\textsc{specifier:} & \mspace{-12mu} \begin{matrix} \textbf{definite} \end{matrix} \\
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{mother} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+\[
+\textsc{goes}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{go} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{present}\\
+  \textsc{aspect:} & \textit{simple}\\
+\end{bmatrix}
+\end{bmatrix}
+\]
+		As we see, the forms used ('the mother' and 'goes') inherit most of their features from the general FS for 'mother' and 'go'. They also agree in attributes.\\
+		Observe the phrase "the mother goes"\\
+			
+			\[
+\textsc{mother}=
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+  \textsc{root:} & \textit{mother}\\
+\end{bmatrix}
+\]\\
+\[
+\textsc{the mother}=
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+  \textsc{root:} & \textit{mother}\\
+  \textsc{specifier:} & \textit{definite}\\
+\end{bmatrix}
+\]\\
+\[
+\textsc{the mother goes}=
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+  \textsc{root:} & \textit{mother}\\
+  \textsc{tense:} & \textit{present}\\
+  \textsc{aspect:} & \textit{singular}\\
+  \textsc{root:} & \textit{go}\\
+\end{bmatrix}
+\]
+\textsl{•}
 	
 \end{document}
