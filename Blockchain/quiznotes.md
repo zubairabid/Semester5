@@ -201,5 +201,9 @@ verify(pk, sig, message) == true
 
 ## El-Gamal
 
+- p, g, x (random), h (from x,g,p).
 - 
+
+
+## DSA
 
