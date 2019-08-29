@@ -1,8 +1,25 @@
 import numpy as np
 from sklearn.model_selection import KFold
+from matplotlib import pyplot as plt
 
 import math
 import pprint
+
+index = 1
+fig = plt.figure()
+
+def plot(k, mean, var, n):
+
+    global fig
+    global index
+
+    ax = fig.add_subplot(2, 2, index, title="Mean vs K for n = {0}".format(n))
+    plt.plot(k, mean)
+
+    ax = fig.add_subplot(2, 2, index+1, title="Variance vs K for n = {0}".format(n))
+    plt.plot(k, var)
+
+    index += 2
 
 def function(n):
     mew = 0
@@ -14,9 +31,11 @@ def function(n):
     x = np.arange(n)
     data_points = np.vstack((x, y)).T
 
-    pprint.pprint(noise)
+    # pprint.pprint(noise)
 
-    meanvar = []
+    ks = []
+    means = []
+    variances = []
     # Iterating through possible values of k
     for k in range(2, n):
         if n % k != 0:
@@ -28,10 +47,13 @@ def function(n):
         for train, test in kfold.split(noise):
             fold_means.append(np.mean(noise[train]))
 
-        mean = np.mean(fold_means)
-        var = np.var(fold_means)
-        meanvar.append((k, mean, var))
+        means.append(np.mean(fold_means))
+        variances.append(np.var(fold_means))
+        ks.append(k)
 
-    pprint.pprint(meanvar)
+    plot(ks, means, variances, n)
 
 function(100)
+function(10000)
+plt.show()
+
