@@ -27,9 +27,9 @@ def function(n):
 
     # Creating the data
     noise = np.random.normal(mew, sigma, n)
-    y = np.array([math.sin(i) for i in range(n)]) + noise 
-    x = np.arange(n)
-    data_points = np.vstack((x, y)).T
+    #y = np.array([math.sin(i) for i in range(n)]) + noise 
+    #x = np.arange(n)
+    #data_points = np.vstack((x, y)).T
 
     # pprint.pprint(noise)
 
