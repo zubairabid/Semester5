@@ -1,0 +1,275 @@
+
+\documentclass[10pt,a4paper]{article}
+
+
+%\usepackage{geometry}
+\usepackage{mathrsfs}
+\usepackage{epsfig}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{amsmath, amssymb, amsthm, amsfonts, graphicx}
+\usepackage{url,color}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+%\graphicspath{ {/home/vatsal/IIIT/Sem4/OM/Homework} }
+\usepackage{epsfig}
+
+
+\usepackage{tabu}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{wrapfig}
+\usepackage{empheq}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{pstricks-add, auto-pst-pdf}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usetikzlibrary{positioning,chains,fit,shapes,calc}
+
+\frenchspacing
+%\newtheorem{theorem}{Theorem}
+\newtheorem{note}{Note}
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{caption}
+\setlength{\topmargin}{ 0.1in}
+\setlength{\columnsep}{2.0pc}
+\setlength{\headheight}{0.0in} \setlength{\headsep}{0.0in}
+\setlength{\oddsidemargin}{.15in} \setlength{\parindent}{1pc}
+\setlength{\evensidemargin}{.15in} \setlength{\parindent}{1pc}
+\setlength{\parsep}{15pt}
+\textheight 9.0in \textwidth 6.0in
+\newcommand{\hr}{\noindent\rule{\textwidth}{.35mm}\vspace{8pt}}% 
+
+
+
+
+\begin{document}
+
+
+\begin{table}[!h]
+\centering
+%\resizebox{\textwidth}{!}{
+\begin{tabularx}{\textwidth}{|Xll|}
+\hline
+& &\\
+Distributed Trust and Blockchains &  Date: & \emph{29.08.2019}\\
+ & &\\
+Instructor: \emph{Sujit Prakash Gujar} & Scribes: & {Zubair Abid}\\ & & {Akshay Kharbanda} \\ 
+ \hline
+
+\end{tabularx}
+%}
+\end{table}
+
+\begin{center}
+\begin{LARGE}
+Lecture 3: Distributed Consensus, and Cryptographic Puzzles
+\end{LARGE}
+\end{center}
+
+\section{Recap}
+\subsection{Quiz Review}
+\subsection{Last Class}
+
+\begin{enumerate}
+	\item MyCoin (Goofy Coin)\\
+	\emph{How does MyCoin work?}
+	\begin{enumerate}
+		\item Coins are sent to a public key
+		
+		\item Coins are sent by the sender signing them
+		
+		\item When the next person sends it, they also sign it and add it to the hash pointer
+		
+		\item It just needs digital identity, and relies on the statement that signatures cannot be forged.
+	\end{enumerate}
+	\emph{Challenges:} The system does not provide a mechanism agains double spending of coins.\\
+		
+	\item TrustMe Coin (Scrooge Coin)\\
+	\emph{How does TrustMe Coin work?}
+	\begin{enumerate}
+		\item A public ledger is maintained that can e verified
+		
+		\item The hash pointer is always signed and publicly known.
+		
+		\item There is pseudo-anonymity: public key will e disclosed, but not the real world identity.
+	\end{enumerate}
+	\emph{Challenges:} Getting consensus in such a system, for distributed system. If a single party controls it the advantages of digital currency as envisioned by distributed system enthusiasts are lost.
+	
+\end{enumerate}
+
+
+
+\section{Distributed Consensus}
+
+
+
+\subsection{How does distributed consensus work for blockchain?}
+
+For distributed consensus to work in a blockchain, 
+\begin{enumerate}
+\item As the protocol terminates, all honest nodes must agree on the same value.
+
+\item The value must be given by an honest node.
+\end{enumerate}
+
+\subsection{Fischer-Lynch-Paterson impossibility}
+
+\emph{The FLP impossibility} shows that in an asynchronous distributed system (under certain conditions), it is not possible for any distributed algorithm to solve the consensus problem even if a single node is being dishonest.\\
+
+\emph{Paxos}: Paxos is a solution that largely works in practice, but is possible to come up with theoretical test cases where the algorithm gets stuck, calculating for infinite time and thus not getting any result.\\
+
+\emph{What is Bitcoin doing differently?}\\
+The specific set of cases under which the FLP Impossibility holds are altered in this new setting. Namely, alongside all else there is also a reward (bitcoins) given for maintaining the database correctly, and a penalty for being dishonest.
+
+\subsection{How is Consensus achieved for blockchain?}
+
+In a blockchain, the consensus happens in a specific manner:
+\begin{enumerate}
+\item Broadcast the transaction to all nodes.
+
+\item Each node collects new transactions into a block.
+
+\item A random node gets a chance to write to the ledger (blockchain). It broadcasts the block and the other nodes accept the block if all the transactions are valid (unspent, valid signatures).
+
+\item Nodes express their acceptance by including its hash in the next block they create.
+\end{enumerate}
+
+
+\subsection{Challenges of the process}
+\begin{enumerate}
+\item Choosing the node should not take too long.
+
+\item The random node should not be faulty.
+
+\item "Randomising" the node in real life is not an easy task.
+\end{enumerate}
+
+
+\section{Figuring out how to select a random node}
+We are motivated by the idea that selecting a node at random is not an easy task. Random number generators that exist are pseudorandom, using a seed value. We could try to therefore implement pseudorandom with a completely random seed, or discard the approach entirely in favour of another one.\\
+In general, there are two ways we consider of selecting a random node. 
+\begin{enumerate}
+\item Noise
+
+\item Solving a puzzle
+\end{enumerate}
+
+\subsection{Using noise to select the random node}
+Noise is used as a random seed. 
+
+
+
+\subsection{Noise approach}
+\subsection{Puzzle approach}
+\subsection{How much damage can a malicious node do?}
+
+
+
+\section{Cryptographic Puzzles}
+
+\subsection{What is a Puzzle?}
+\subsection{Proof of Work and Incentive Engineering}
+
+
+
+
+\section{Introduction}
+In your scribes make proper sections, subsections.
+The following general instructions should be followed.
+
+\begin{enumerate}
+\item Do not use all CAPS in titles.
+\item Use notation used in the class. (vectors, variables are in small letters, matrices, sets are in capital letters).
+
+\item All variables must be in math mode. That is \$ \$. 
+For example, we write  $n$-dimensional and not n-dimensional. 
+Typically while writing scientific technical reports, all the variables are used in italics like $x$, $n$ etc.
+
+\item All Figures/Tables must be centered. 
+If you are using any pictures, try to use \\ \verb|\begin{center} \end{center}| around it.
+
+\item Proof read once before submitting. (There should not be ? in pdfs I receive).
+
+\item Make sure there are no spelling mistakes and grammar mistakes.
+
+\item Use \verb|\begin{definition} \end{definition}| or theorem environments appropriately.
+
+\item Note that all important equations should be numbered and not important equations should not be numbered. 
+\begin{verbatim}
+\begin{equation}\label{eq:use_suitable_name}\end{equation}
+\end{verbatim} will do in latex.
+
+\item You can use \begin{verbatim}
+\ref{eq:use_suitable_name}
+\end{verbatim} for referencing it any where in the document.
+References to equations/tables/figures should be Fig. no Eq. (no) and Table no etc. 
+
+\item Do not use boldface to emphasize anything.  Use command emph provided by latex.
+
+\item Go through Section 2 of MS Thesis Submission guidelines for more on general guidelines for writing reports.
+
+
+\item As far as possible create your own examples/figures.
+If any figure is downloaded from internet, please mention appropriate image credits.
+
+\item Do not create images from textbook and paste them. You will get zero marks.
+
+\item Any case of plagiarism will get zero marks. 
+
+\item If you are new to latex,  you might find the following link useful 
+
+\begin{center}
+
+\url{https://en.wikibooks.org/wiki/LaTeX/Mathematics}
+
+\end{center}
+
+
+I personally use overleaf, which is cloud based latex tool.  Overleaf and Shareltex (another popular cloud based latex tool) have joined together to offer cloud based latex service. 
+
+
+
+There are many latex tools and editors available for offline use. You can choose any one based on your comfort.
+
+\item However, it should be noted that you must submit Overleaf/Sharelatex link to TA for first scrutiny.
+
+
+\item \textbf{While Submitting} You must use subject line as `DBTM18: Lecture X scribes' where X is replaced by your lecture number. The file should be named as: DBT18\_Lecture\_X\_yourname.zip 
+The zip file must contain all the required resources.
+
+\item You must submit overleaf link of the project to TAs within 7days from the lecture. For example, if the lecture you are scribing happens to be on Tuesday, you must submit before coming to the class on next Tuesday.
+
+\item Note that this is 3 people working for 5\% of evaluation. Put your efforts in making scribes best.  considerable amount of effort is expected. 
+
+\item Do not remove any of \begin{verbatim}
+    \usepackage{} \end{verbatim}commands at top. If you add any package that is clashing with the above packages, remove them.
+    
+
+
+\end{enumerate}
+
+\begin{definition}[def]
+Any important definitions will go here
+\end{definition}
+
+\begin{theorem}
+Theorems should go in this enviroment
+\end{theorem}
+
+\bibliographystyle{apalike}
+\bibliography{dbt18}
+
+\end{document}
