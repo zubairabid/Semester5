@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2019.8.25)  4 SEP 2019 06:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2019.8.25)  4 SEP 2019 07:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1552,21 +1552,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
 [1
 
-] [2]
-LaTeX Font Info:    Try loading font information for TU+pcr on input line 202.
-LaTeX Font Info:    No file TUpcr.fd. on input line 202.
+]
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for TU+pcr on input line 223.
+LaTeX Font Info:    No file TUpcr.fd. on input line 223.
 
 
 LaTeX Font Warning: Font shape `TU/pcr/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 202.
+(Font)              using `TU/lmr/m/n' instead on input line 223.
 
-
-Overfull \hbox (1.50995pt too wide) in paragraph at lines 250--252
+[3]
+Overfull \hbox (1.50995pt too wide) in paragraph at lines 271--273
 \TU/pcr/m/n/10 placed by your lecture number. The file should be named as: DBT1
 8_Lecture_X_yourname.zip
  []
 
-[3]
 No file main.bbl.
 [4] (./main.aux)
 
@@ -1574,11 +1578,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 33920 strings out of 492922
- 681707 string characters out of 6138851
- 796494 words of memory out of 5000000
- 37390 multiletter control sequences out of 15000+600000
- 536005 words of font info for 49 fonts, out of 8000000 for 9000
+ 33933 strings out of 492922
+ 682079 string characters out of 6138851
+ 795494 words of memory out of 5000000
+ 37395 multiletter control sequences out of 15000+600000
+ 536045 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  54i,10n,92p,659b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
