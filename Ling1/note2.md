@@ -62,4 +62,26 @@ We will be looking at his 44 Universals later.
 
 *Berlin and Kay colour terms*
 
+# 05.09.2019
 
+*Presentation*: Pick a non-Indian language that we do not know. 
+
+- Do a linguistic study, Phonology, Morphology, Syntax, Semantics, .... Something special about the language. 
+    
+    Look at causatives, relativisation. Features. Inflection etc. Lexical level or Morphology level or Syntactic level etc etc.
+
+- Do not have to educate on difference from Indian languages or anything
+
+- 10 Minutes to do the presentation.
+
+- 8-12 pages: the report/term paper.
+
+- Bonus: Extra effort
+
+- Apply the study of two months to the target language constantly.
+
+
+*Referring to Emeneau's Paper*: Read **Masica**
+
+- This paper refers to numerals and classifiers
+- 
