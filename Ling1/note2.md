@@ -85,3 +85,15 @@ We will be looking at his 44 Universals later.
 
 - This paper refers to numerals and classifiers
 - 
+
+## Language Universals: Formal and Substantive
+
+We have:
+
+Formal - Substantive
+
+Absolute - Tendencies
+
+Implicational - Non-Implicational
+
+
