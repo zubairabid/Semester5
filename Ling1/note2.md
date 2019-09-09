@@ -137,6 +137,27 @@ Manish Sir is taking the class.
 
 - Written communication can allow for a more nuanced expression. Expressibility increases, spontaneity is lost
 
+- Writing is independent of the discourse situation. 
+
+- Writing allows for time delays before responding
+
+- Writer has freedom to express veeery vague idea
+
+- Writing is monologue-ic. Speech is (always) dialogue, with the exception of maybe plays.
+
+- Zen and the art of motorcycle maintenance, just an aside. 
+
+- Writing reduces the load of memorization
+
+- Writing allows for more complexity, speech allows for more nuance.
+
+    Eg: Expressing sarcasm in writing. Or appreciation.
+
+- Writing more objective.
+
+- Allows for higher degree of fossilization.
+
+- Writing requires standardization
 
 
 ### *General question: Sign language*
@@ -153,3 +174,14 @@ Ah yes it was about writing devices, and a segue into punctuation.
 So point is: punctuation does not relate to pauses, and pauses don't necessarily relate to language too.
 
 
+*Looking at ideographs*
+
+- ???
+
+- Ideographs aren't real sweaty
+
+- How to represent new concepts in an ideographic system.
+
+- How do we get to sound correspondence again.
+
+- Bad pronunciations of Sayar.
