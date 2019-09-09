@@ -97,3 +97,59 @@ Absolute - Tendencies
 Implicational - Non-Implicational
 
 
+# 09.09.2019
+Manish Sir is taking the class.
+
+## Writing Systems
+
+- First writing systems? Would you consider pictures to be writing system
+
+- Like a language, a writing system needs to be productive
+
+- Conveying an idea is one part of writing. There will be rules.
+
+- Why does language and writing have to be connected?
+
+- Brings up: speech, language, and writing. And there is evidence that speech does not necessarily translate to written language. Eg: Chinese is a good one. 
+
+- "It should associate itself with all the capabilities of the language" - but the burden of productivity lies with the language, and the writing system is tied to the language.
+
+    Saujas: writing systems have their own productivity
+
+### Summarising
+- Has to be consistent, by convention
+
+- It's not expressing anything new. It has to do with expression of what is expressed by the language.
+
+    Ujwal: what about math? 
+
+    Sir: Math is sort of a language itself, so to speak. (so to speak repeated by Saujas, sarcastically). The language itself cannot be called a language, linguistically. But considering the connection with written form, it's as expressive, productive, etc: hallmarks of a language?
+
+    Saujas: Math writing has to be unambiguous. 
+
+- Purpose of writing systems is persistency, not [missed]
+
+### Persistence of Writing?
+
+- Speech is transient: if phonemes are missed, it's gone. 
+
+- The persistence factor of writing comes from what can be done with it.
+
+- Written communication can allow for a more nuanced expression. Expressibility increases, spontaneity is lost
+
+
+
+### *General question: Sign language*
+
+- Would sign language be a speech system/writing system?
+
+- How to transcribe sign. 
+
+
+*There's a lot being said about pauses, no idea how to note this*
+
+Ah yes it was about writing devices, and a segue into punctuation.
+
+So point is: punctuation does not relate to pauses, and pauses don't necessarily relate to language too.
+
+
