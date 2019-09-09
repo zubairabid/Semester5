@@ -1,0 +1,7 @@
+Word tokenizer: just take the words out
+Punt tokenizer: ???
+Email tokenizer: Extract abc@xyz.com as just that, do not split
+URL tokenizer: Extract https://www.blah.whatever.domain.further as that URL, do not split
+Number/Currency tokenizer: Get the number 123,344,987.27 as one thing and not two split numbers. Also with currency sign where needed
+Name Tokenizer: ???
+Hashtag tokenizer: #Cool is one thing

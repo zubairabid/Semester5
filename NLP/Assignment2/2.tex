@@ -1,0 +1,389 @@
+% !TEX program = xelatex
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+%\setmainfont{???}
+\usepackage{amsmath}
+\usepackage{blkarray}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=1.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+
+
+\usepackage[document]{ragged2e}
+
+
+\usepackage{xcolor}
+\definecolor{hlit}{rgb}{0.5,0,1}
+\definecolor{diff}{rgb}{0.1,0.1,0.5}
+\definecolor{rlit}{rgb}{1,0,0}
+
+\title{NLP, Assignment 2}
+\author{Zubair Abid, 20171076}
+\date{}
+
+\begin{document}
+	\maketitle
+
+	\section{Sentences}
+	\begin{enumerate}
+		\item The mother goes to school to drop the child.
+		
+		\item The mother goes to school for dropping the child.
+		
+		\item The mother goes to school having dropped the child.
+		
+	\end{enumerate}		
+	
+	\section{Phase Structure and Dependency Tree for each sentence}
+
+	\begin{enumerate}
+		\item The mother goes to school to drop the child.
+		
+		\Tree[.S	[.NP	
+						[.det The ]
+						[.Noun mother ] 
+					]
+					[.VP	
+						[.VBZ goes ]
+						[.PP
+							[.P to ]
+							[.NP [.Noun School ] ] ]
+						[.S 
+							[.VP
+								[.TO to ]
+								[.VP 
+									[.Verb drop ]
+									[.NP 
+										[.det the ]
+										[.Noun child ]
+									]
+								]
+							]
+						] 
+					] 
+			]		
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm,]
+
+		\Tree[.goes
+						\edge node[auto=right] {$n-sub$}; 
+						[.mother 
+								\edge node[auto=left] {$det$};
+								[.the ] 
+						]
+						\edge node[auto=right] {$x-comp$}; 
+						[.drop	
+								\edge node[auto=left] {$d-obj$};
+								[.child 
+									\edge node[auto=left] {$det$};
+									[.the ]
+								]
+								\edge node[auto=left] {$aux$};
+								[.to ] 
+						]
+						\edge node[auto=left] {$nmod$}; 
+						[.school	
+								\edge node[auto=left] {$case$};
+								[.to ]
+						]
+		]		
+		
+		\end{tikzpicture}		
+			
+		$ $\\
+		$ $\\
+		$ $\\
+				
+		\item The mother goes to school for dropping the child.
+		
+		\Tree[.S	[.NP	
+						[.det The ]
+						[.Noun mother ] 
+					]
+					[.VP	
+						[.VBZ goes ]
+						[.PP
+							[.P to ]
+							[.NP [.Noun School ] ] ]
+						[.S 
+							[.VP
+								[.IN for ]
+								[.VP 
+									[.Verb dropping ]
+									[.NP 
+										[.det the ]
+										[.Noun child ]
+									]
+								]
+							]
+						] 
+					] 
+			]		
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm,]
+
+		\Tree[.goes
+						\edge node[auto=right] {$n-sub$}; 
+						[.mother 
+								\edge node[auto=left] {$det$};
+								[.the ] 
+						]
+						\edge node[auto=right] {$x-comp$}; 
+						[.dropping	
+								\edge node[auto=left] {$d-obj$};
+								[.child 
+									\edge node[auto=left] {$det$};
+									[.the ]
+								]
+								\edge node[auto=left] {$aux$};
+								[.for ] 
+						]
+						\edge node[auto=left] {$nmod$}; 
+						[.school	
+								\edge node[auto=left] {$case$};
+								[.to ]
+						]
+		]		
+		
+		\end{tikzpicture}	
+			
+		$ $\\
+		$ $\\
+		$ $\\
+		
+		\item The mother goes to school having dropped the child.
+				
+		\Tree[.S	[.NP	
+						[.det The ]
+						[.Noun mother ] 
+					]
+					[.VP	
+						[.VBZ goes ]
+						[.PP
+							[.P to ]
+							[.NP [.Noun School ] ] ]
+						[.S
+							[.VP
+								[.VBG having ]
+								[.VP 
+									[.Verb dropped ]
+									[.NP 
+										[.det the ]
+										[.Noun child ]
+									]
+								]
+							]
+						] 
+					] 
+			]		
+		$ $\\
+		$ $\\
+		$ $\\
+		\begin{tikzpicture}[level distance=1.5cm,sibling distance=3cm,]
+
+		\Tree[.goes
+						\edge node[auto=right] {$n-sub$}; 
+						[.mother 
+								\edge node[auto=left] {$det$};
+								[.the ] 
+						]
+						\edge node[auto=right] {$x-comp$}; 
+						[.dropped	
+								\edge node[auto=left] {$d-obj$};
+								[.child 
+									\edge node[auto=left] {$det$};
+									[.the ]
+								]
+								\edge node[auto=left] {$aux$};
+								[.having  ] 
+						]
+						\edge node[auto=left] {$nmod$}; 
+						[.school	
+								\edge node[auto=left] {$case$};
+								[.to ]
+						]
+		]		
+		
+		\end{tikzpicture}	
+			
+		$ $\\
+		$ $\\
+		$ $\\
+		
+	\end{enumerate}	
+	
+	\section{Context Free Grammar rules to cover these}
+    \begin{enumerate}
+
+        \item S --> NP VP
+        \item NP --> det Noun
+        \item VP --> Verb NP
+        \item VP --> TO VP
+        \item VP --> VBZ PP S
+        \item VP --> VBG VP
+        \item VP --> IN VP
+        \item PP --> P NP
+        \item NP --> Noun
+        \item S' --> VP
+
+    \end{enumerate}
+
+	
+	\section{Feature Specifications covering different Tense-Aspects of the verb drop}
+    \textbf{Drop} occurs in the different tense-aspects:\\
+    \textit{drop}, \textit{dropped}, and \textit{dropping}
+
+\[
+\textsc{drop}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{drop} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{present}\\
+  \textsc{case:} & \textit{to}\\
+  \textsc{aspect:} & \textit{simple}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+
+\[
+\textsc{dropped}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{drop} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{past}\\
+  \textsc{case:} & \textit{to}\\
+  \textsc{aspect:} & \textit{perfect}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+\[
+\textsc{dropping}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{drop} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{continous}\\
+  \textsc{case:} & \textit{for}\\
+  \textsc{aspect:} & \textit{progressive}\\
+\end{bmatrix}
+\end{bmatrix}
+\]
+$ $\\
+$ $\\
+$ $\\
+		This helps us deal with the number of rules we have, somewhat.\\
+		((VP --> TO VP)), ((VP --> IN VP)), ((VP --> VBG VP)) get reduced.\\
+		\[
+\textsc{VP} ->
+\begin{bmatrix} 
+\textsc{root} \\
+\textsc{case} \\
+\textsc{aspect} \\
+\end{bmatrix}
+\]
+		We unify the rules, as the general rule explains all the various ones and we can apply the correct one by looking up the feature specification table.\\
+
+	
+	\section{Handling agreement between mother and go using feature specifications}
+	
+	\[
+\textsc{mother}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{mother} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+\[
+\textsc{go}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{go} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{present}\\
+  \textsc{aspect:} & \textit{simple}\\
+\end{bmatrix}
+\end{bmatrix}
+\]
+		Comparing against the forms used:\\
+		
+	\[
+\textsc{the mother}=
+\begin{bmatrix}
+\textsc{specifier:} & \mspace{-12mu} \begin{matrix} \textbf{definite} \end{matrix} \\
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{mother} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+\end{bmatrix}
+\end{bmatrix}
+\]\\
+\[
+\textsc{goes}=
+\begin{bmatrix}
+\textsc{root:} & \mspace{-12mu} \begin{matrix} \textbf{go} \end{matrix} \\
+\begin{matrix} \textsc{attr:} \end{matrix} &
+\mspace{-12mu}
+\begin{bmatrix}
+  \textsc{tense:} & \textit{present}\\
+  \textsc{aspect:} & \textit{simple}\\
+\end{bmatrix}
+\end{bmatrix}
+\]
+		As we see, the forms used ('the mother' and 'goes') inherit most of their features from the general FS for 'mother' and 'go'. They also agree in attributes.\\
+		Observe the phrase "the mother goes"\\
+			
+			\[
+\textsc{mother}=
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+  \textsc{root:} & \textit{mother}\\
+\end{bmatrix}
+\]\\
+\[
+\textsc{the mother}=
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+  \textsc{root:} & \textit{mother}\\
+  \textsc{specifier:} & \textit{definite}\\
+\end{bmatrix}
+\]\\
+\[
+\textsc{the mother goes}=
+\begin{bmatrix}
+  \textsc{gender:} & \textit{female}\\
+  \textsc{number:} & \textit{singular}\\
+  \textsc{root:} & \textit{mother}\\
+  \textsc{tense:} & \textit{present}\\
+  \textsc{aspect:} & \textit{singular}\\
+  \textsc{root:} & \textit{go}\\
+\end{bmatrix}
+\]
+\textsl{•}
+	
+\end{document}
