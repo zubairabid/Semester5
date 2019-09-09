@@ -34,6 +34,17 @@ q1 = fig.add_subplot(122, title="30 iterations, observing minima", xlabel="Itera
 q1.plot(y1[:30])
 
 
+fig3 = plt.figure()
+plot = []
+for i in range(10, 1000):
+    plot.append((i, grad_desc(init_x, learn_rate, 10000000, 1/i)))
+
+plot = np.array(plot)
+q1 = fig3.add_subplot(111, title="Convergence criteria vs iterations", xlabel="1/Convergance criteria", ylabel="iterations")
+q1.scatter(plot[:,0], plot[:,1], s=0.1)
+
+
+
 xconv, yconv = grad_desc(init_x, 0.5)
 xdiv, ydiv = grad_desc(init_x, 1)
 xosc, yosc = grad_desc(init_x, 3)
