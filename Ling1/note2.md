@@ -218,3 +218,6 @@ Language acquisition vs language loss is that ^^
 
 ### Restrictive and Non Restrictive Relative clauses
 
+# 16.09.2019
+
+
