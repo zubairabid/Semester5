@@ -112,6 +112,21 @@ $c = m^e \bmod n$
 
 $m = c^d \bmod n$
 
+*The Integer Factorization Problem*
+
+Given $e$, $n$, in the equation $ed = 1 \bmod n$
+
+It is not easy to calculate $e$
+
+IFP is hard, RSA is unknown.
+**Solving RSA does not mean IFP has been cracked**
+
+*The Discrete Log Problem*
+
+Given $h$, $g$, $p$ it is difficult to find $x$ such that $g^x \equiv h \bmod p$
+
+As, even if $a < b$, $g^a > g^b$ is possible
+
 
 ### El Gamal
 
@@ -193,13 +208,13 @@ verify(pk, sig, message) == true
 
 ## RSA
 
-- p, q, n=pq, phi(n), e, d st ed=1 mod phi(n)
-- d is private and e is public. d is used to sign, e to verify
+- $p, q, n=pq, \phi(n), e, d$ st $ed=1 \bmod \phi(n)$
+- $d$ is private and $e$ is public. $d$ is used to sign, $e$ to verify
 
 ### Sign-Verify
 
-- sig: m^d mod n
-- verify: s^e == m mod n
+- sig: $m^d \bmod n$
+- verify: $s^e == m \bmod n$
 
 
 ## El-Gamal
