@@ -221,3 +221,17 @@ Language acquisition vs language loss is that ^^
 # 16.09.2019
 
 
+# 30.09.2019
+
+- Summaries will be put online so others can also read it.
+- Actual dates are yet to be fixed.
+- It will be in class hours
+
+### Task before new topic
+IPA chart in native language, from memory
+
+## Phonological Typology + universals
+
+Reading the Pantcheva paper: https://moodle.iiit.ac.in/pluginfile.php/73176/mod_resource/content/1/Phonology-pantcheva.pdf
+
+
