@@ -185,3 +185,53 @@ So point is: punctuation does not relate to pauses, and pauses don't necessarily
 - How do we get to sound correspondence again.
 
 - Bad pronunciations of Sayar.
+
+
+# 12.09.2019
+
+- Typology
+- Word Order
+- Morphology
+- Deep structures
+
+- Approach
+- Data
+- Abstraction
+
+- Broca's
+- Wernicke
+
+Language acquisition vs language loss is that ^^
+
+- Causative
+    - Lexical: eat-feed
+    - Sentence: verb-make verb
+    - Morph
+    
+    In different languages
+
+
+## Relative Clauses
+
+- Usually a subordinate clause
+
+
+### Restrictive and Non Restrictive Relative clauses
+
+# 16.09.2019
+
+
+# 30.09.2019
+
+- Summaries will be put online so others can also read it.
+- Actual dates are yet to be fixed.
+- It will be in class hours
+
+### Task before new topic
+IPA chart in native language, from memory
+
+## Phonological Typology + universals
+
+Reading the Pantcheva paper: https://moodle.iiit.ac.in/pluginfile.php/73176/mod_resource/content/1/Phonology-pantcheva.pdf
+
+

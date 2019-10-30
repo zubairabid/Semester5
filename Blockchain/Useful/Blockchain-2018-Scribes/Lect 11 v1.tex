@@ -1,0 +1,272 @@
+
+\documentclass[10pt,a4paper]{article}
+
+
+%\usepackage{geometry}
+\usepackage{mathrsfs}
+\usepackage{epsfig}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{amsmath, amssymb, amsthm, amsfonts, graphicx}
+\usepackage{url,color}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+%\graphicspath{ {/home/vatsal/IIIT/Sem4/OM/Homework} }
+\usepackage{epsfig}
+
+
+\usepackage{tabu}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{wrapfig}
+\usepackage{empheq}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{pstricks-add, auto-pst-pdf}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usetikzlibrary{positioning,chains,fit,shapes,calc}
+
+\frenchspacing
+%\newtheorem{theorem}{Theorem}
+\newtheorem{note}{Note}
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{caption}
+\setlength{\topmargin}{ 0.1in}
+\setlength{\columnsep}{2.0pc}
+\setlength{\headheight}{0.0in} \setlength{\headsep}{0.0in}
+\setlength{\oddsidemargin}{.15in} \setlength{\parindent}{1pc}
+\setlength{\evensidemargin}{.15in} \setlength{\parindent}{1pc}
+\setlength{\parsep}{15pt}
+\textheight 9.0in \textwidth 6.0in
+\newcommand{\hr}{\noindent\rule{\textwidth}{.35mm}\vspace{8pt}}% 
+
+
+
+\begin{document}
+
+
+\begin{table}[!h]
+\centering
+%\resizebox{\textwidth}{!}{
+\begin{tabularx}{\textwidth}{|Xll|}
+\hline
+& &\\
+Distributed Trust and Blockchains &  Date: & \emph{14-September-2018}\\
+ & &\\
+Instructor: \emph{Sujit Prakash Gujar} & Scribes: & Richa Kuswaha \\
+& & Shobhan Mandal \\
+& & Paawan Gupta \\
+ \hline
+
+\end{tabularx}
+%}
+\end{table}
+
+\begin{center}
+\begin{LARGE}
+Lecture 11: Bitcoin As a Platform
+\end{LARGE}
+\end{center}
+
+
+
+\section{Recap}
+
+In the previous lecture we covered the topics regarding Bitcoin Blockchain, Hash Pointer (Merkle Trees), Bitcoin Block-Structure, Coinbase Transaction and joining bitcoin network. In the next subsections, we provide a brief overview of these topics.  
+\subsection{Bitcoin Blockchain}
+We all know that Bitcoin, one of most popular cryptocurrencies in the market, is based on Blockchain. Now in this we talked about how the blockchain looks in case of Bitcoins. A Bitcoin block chain contains two different hash structures. The first is a hash chain of blocks that links the different blocks to one another. The second is internal to each block and is a Merkle Tree of transactions within the blocks. 
+
+\subsection{Hash Pointer: Merkle Trees}
+As mentioned above Bitcoin uses Merkle trees to store/refer the transactions. The reason for using the Merkle tree is that new transactions can be added faster and it takes less amount of space. One of the biggest benefit of the Merkle tree is it allows us to verify if a particular transaction is part of the block or not in very less time.   
+
+\subsection{Bitcoin Block Structure}
+\begin{itemize}
+\item A block contains many transactions.
+\item Block chain is a combination of 2 hash-based data structures.  Every block in the chain has a block header, a hash pointer to the previous block in the sequence and a hash pointer to the merkel tree structure.
+\item Block header contains nonce, time-stamp and bits
+\end{itemize}
+\subsection{Coinbase Transaction}
+\begin{itemize}
+\item A coinbase transaction is a unique type of bitcoin transaction that can only be created by a miner. Thus new coins are created by this.
+\item Has single input and output and input doesn't redeem any previous output.
+\item Consists of mining reward as well as sum of transaction fees given by the transactions in the block.
+\end{itemize}
+\subsection{Joining Bitcoin Network}
+\begin{itemize}
+\item Can join as a miner/full node or a client to receive payments
+\item Advantages and disadvantages of being a Thin/SPV clients
+\item Gossip protocol is used to join a bitcoin network. Contact a seed node, know about other nodes, contact them, choose peers and become a member of the network.
+\item Roles of being a bitcoin node.
+\begin{itemize}
+\item Maintain Peer-to-Peer network
+\item Maintain decentralization 
+\item Verify proof-of-work 
+\item Ensure no double spending
+\item Maintain Consensus in network
+\item Execute output script
+\end{itemize}
+\item UTXO set is used to keep track of output transactions that have not been used.
+\end{itemize}
+
+\section{Overview}
+In this lecture we have talked about the Proof Of Knowledge of building a secure Timestamping in Bitcoin. Towards this, we look at what are Provably Unspendable Commitments and how we can perform attack on proof of clairvoyance. Then we talk about Fungibility and Non-Fungibility , how they can be used in Smart Property and their applications. In the end we talk about Colored Coins, where we use the Non-Fungibility property of the bitcoins.
+
+\section{Proof-of-Knowledge}
+The append only log can be used to build a secure timestamping system from Bitcoin. We want to be able to prove that we know some value $x$ at some specific time $T$. We might not want to actually reveal $x$ at time $T$. Instead we only want to reveal $x$ when we actually make the proof, which may be much later than $T$.
+
+The main idea is proof of having knowledge of $x$ at time $t$ and if desired without revealing $x$ at time $t$.
+\begin{itemize}
+    \item \textit{} Publishing $H(x)$ is a commitment to $x$.
+    \item \textit{} Cannot find an $x' \neq x$ later such that $H(x') = H(x)$
+\end{itemize}
+
+\section{Time Stamping in Bitcoin}
+As discussed in previous point we need some mechanism to build a secure timestamping. One possible way is to prove prior knowledge of some idea. Suppose we wanted to prove that some invention we filed a patent on was actually in our heads much earlier. We could do this by publishing the hash of a design document or schematic when we first thought of the invention — without revealing to anybody what the idea is. Later on, when we file our patent or when we publicize the idea, we can publish the original documents and information and anybody can look backwards in time and confirm we must have known it earlier when we published the commitment to it.
+\\
+\\
+Some points regarding Timestamping in Bitcoins:-
+\begin{itemize}
+    \item If either party later lies about what was submitted or when, the other party can prove them wrong by revealing the input to the hash. So the simplest solution is instead of sending money to the hash of a public key, just send it to the hash of your data. This “burns” those coins that is makes them unspendable and hence lost forever, since you don’t know the private key corresponding to that address. 
+
+    \item To keep your cost down, you would want to send a very small amount, such as one satoshi which is the minimum possible transaction value in Bitcoin.
+
+    \item Although this approach is very simple, the need to burn coins is a disadvantage. A bigger problem is that Bitcoin miners have no way to know that the transaction output is unspendable, so they must track it forever.
+\end{itemize}
+
+\section{Provably Unspendable Commitments}
+As discussed in previous point that is how to make the commitments sometimes we may need some kinds of commitments which will be used when we only want to store transaction and not use it.
+\\
+Below is the format of using such commitments.
+
+\begin{itemize}
+    \item \textit{} OP\textunderscore RETURN \textless arbitraryData \textgreater
+    \item \textit{} NOTE : The OP\textunderscore RETURN instruction returns immediately with an error so that this script can never be run successfully, and the data you include is ignored. 
+\end{itemize}
+
+The advantage with them is they are cheap because a typical transaction fee is less than a penny. The cost can be reduced even further by using a single commitment for multiple values, there are no UTXO bloat because this method avoids bloat in the unspent transaction output set since miners will prune OP\textunderscore RETURN outputs.
+\\
+\\
+One downside of being able to write arbitrary data into the block chain is that people might abuse the feature. Sure enough, several people have tried doing things like this to “grief” (i.e., to harass or annoy) the Bitcoin community.
+
+\section{Attacks on Proof Of Clairvoyance}
+One thing that we can’t do with secure time--stamping alone, although it would be very nice if we could, is to prove clairvoyance, the ability to predict the future. This might seem possible. The idea would be to publish a commitment to a description of an event that’s about to occur (such as the outcome of a sporting event or of an election) and then later reveal that information to prove we predicted the event ahead of time.
+\\
+
+But one of the biggest problem to this scheme is that an adversary can simply commit to a variety of possible outcomes, and then only reveal the commitments that turn out to be true. This means that if the adversary actually do have the ability to predict the future and want to prove it, he/she must prove that he/she is time--stamping one specific prediction rather than that multiple predictions. Since the adversary is publishing hash-based commitments, so if they are not published or revealed it cannot be used to track it back to the adversary easily.
+
+\subsection{Offline Solution to have Clairvoyance}
+We can go with Secure time--stamping the old-fashioned way. A simple low-tech way to secure time--stamping, is to publish the hash of our data in a newspaper, similar to the one in Figure:\ref{Q1}, or some other media which is widely seen by the public. Archives of old newspaper issues are maintained at libraries and online. This method provides a high degree of assurance that we knew that data on the day the newspaper was published. Later, when we want to reveal the data we committed, we can even take out a second advertisement to publish the data in the same newspaper.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Images/Q1.png}
+  \caption{A timestamping service (GuardTime) that publishes hashes in a daily newspaper rather than the Bitcoin block chain.Customers of the company can pay to have their data included in the
+time-stamp \cite{b2}}
+  \label{Q1}
+\end{figure}
+
+
+
+\section{Fungibility and Non-Fungibility}
+Something is fungible if individual units of that good are equivalent and can be substituted for one another. \textit{Gold} and \textit{Fiat Currency} are some of the goods which are Fungible. On the other hand \textit{Crypto--Currency}(Eg:- Bitcoin, Ethereum) are Non-Fungible. So now the question may arise how come both Fiat Currency and Crypto Currency which has some sort of serial number associated with it are different. The reason is that Fiat Currency do not have a history associated with it means we have no ways of tracking down whose hands the currency has passed through. On the other hand Crypto Currency stores the history, meaning we can track down which public keys the currency has passed through till the one or more coinbase transactions where it was minted. In a way we can say that every Crypto Coin has a unique history of its own thus making it non-fungible.
+\\
+
+Some points regarding Bitcoins:-
+\begin{itemize}
+    \item \textit{Bitcoin is Pseudonymous}: This can be detected by the following: Lets say if a surge of Crypto currency transaction is taking place and the same time a person is converting that amount into Fiat Currency. We will be able to know about that person, though it is not an easy task but we can also say that it is not entirely impossible. 
+    \\
+    \textit{Golden Rule}: It is better to not stick to a particular bitcoin/ethereum address. We should try to use a new one for every transaction.
+    \item Block fee is the fee which is earned for creating a block. Miners are earning the block fee by mining this block. This is called \textit{Coinbase Transaction}. These transaction do not have source only the destination public key.
+    \item \textit{Lite Nodes}: These nodes do not contain the complete blockchain network, but certain part of it. They are responsible for keeping the transactions related to me, until Coinbase Transaction takes place.
+    \item {Blacklisting Bitcoin}: This is done when it is found that the Bitcoin has been used for illegal activities which shows up in the Bitcoin's history.
+\end{itemize}
+
+\section{Smart Property}
+The non-fungible property of the bitcoin (or in general the blockchain) can be put to use though it has the potential to denonymize users. It can be used to give meaning to the history of bitcoins.
+\\
+
+Let's think about what it would mean to give meaning to the history of ordinary offline physical currency. Suppose we wanted to add metadata to offline currency. In fact, some people already do this. For example, they like to write various messages on banknotes, often as a joke or a political protest. This generally doesn’t affect the value of the banknote, and is just a novelty.
+\\
+
+But what if we could have authenticated metadata attached to our currency - metadata that cannot easily be duplicated? One way to achieve this is to include a cryptographic signature in the metadata we write, and tie this metadata to the serial number of the banknote. \st{An example can be the image on Figure:} \sd{An example for this is illustrated in Figure \ref{Q2}.}
+\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Images/Q2.png}
+  \caption{An example of adding useful metadata to ordinary bank notes \cite{textbook1}.}
+  \label{Q2}
+\end{figure}
+
+
+
+The benefits of using metadata in the currency:
+\begin{itemize}
+    \item Currency can now be used to represent anything, even a new currency can be designed over the existing Bitcoin.
+    \item Anti-counterfeiting properties are inherited. Say you mention something in the metadata of a particular bitcoin, though the coin is divided multiple times, this metadata stays in each divided coin.
+    \item It helps on generating trust on the issuer. 
+\end{itemize}
+
+\section{Applications of Non-Fungibility and Meta-data}
+\begin{itemize}
+    \item \textbf{Vintage/Special value} - Paintings and sculptures could be verified and authenticated by experts before creating a non-fungible token for a given piece of art. When the owner wants to sell the piece of art, they can simply list the non-fungible token on an auction as proof that the asset is real and they are the true owner.
+    \item \textbf{Game tokens} - Often, characters in games acquire tradeable items like weapons, clothing, and even property. Creating non-fungible tokens for these assets makes them tradeable for in-game tokens or even real-world cash. 
+    \item \textbf{Stadium Tickets} - If I have a ticket to see India vs Australia match and you have a ticket to your local college cricket game, both are similar items, but they have wildly different values. Both will grant entry to an event at a certain time and place, but they are hardly transferable. This is the essence of an Non-Fungibility. It standardizes ownership of a certain category of asset, but the assets within that category can have very different market values.
+    \item \textbf{Transfer of Property} - You could receive a nontradable digital token as your birth certificate, as your passport, and as your driver’s license. Of course, you would not be able to trade these tokens, but they would be able to interact and verify with the proper authorities. You could also share this information voluntarily with employers, doctors, or anyone else who needs your personal info.
+\end{itemize}
+\section{Colored Coins}
+\begin{itemize}
+\item Bitcoin stamped with "color" are called Colored Coins. A bitcoin stamped with a color still functions as a valid bitcoin, but additionally carries this metadata. In the “issuing” transaction, we’ll insert some extra metadata that declares some of the outputs to have a specific color. An example is illustrated in Figure~\ref{fig:coloredcoins}. In one transaction, we issue five “purple” bitcoins in one transaction output, while the other output continues to be normal uncolored bitcoins. Someone else, perhaps with a different signing key, issues “green” bitcoins in a different transaction. We call these colors for intuitiveness, but in practice colors are just bit strings. One of the property is that coins of the same color and same value are equivalent.
+\item We can perform all the previous "useful" properties with bitcoins having different colors associated with them. We could have another bitcoin transaction that takes several inputs: some green coins, some purple coins, some uncolored coins, and shuffles them around. It can have some outputs that maintain the color. There may need to be some metadata included in the transaction to determine which color goes to which transaction output. We can split a transaction output of four green coins into two smaller green coins. Later on we could combine multiple green coins into one big green coin.
+\end{itemize}
+\subsection{OpenAssets Implementation}
+\begin{itemize}
+\item Assets are issued using a special Pay‐to‐Script‐Hash address. If you want to issue colored coins, you first choose a \textbf{P2SH} address to use. Any coin that transfers through that address and comes in without a color will leave with the color designated by that address There are various exchanges that track which addresses confer which colors onto coins. Since coins can sequentially pass through more than one color‐issuing address, they can have more than one color.
+\item Every time you have a transaction that involves colored coins, you have to insert a\textbf{ special marker output}. This is a provably unspendable output, similar to what we used for time-stamping data commitments. It can add extra metadata. 
+\item Allows anybody to declare any color they want without having to ask a central authority for the right to issue colored coins.
+\item If there are others who understand and abide by the meaning you ascribe to the color you issue, your colored coins may attain additional value beyond their nominal bitcoin value. For example, if the Yankees issue colored coins, these coins will be able to function as tickets to a game provided the stadium operators understand their meaning and let you in based on colored‐coin tickets.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Images/Q3.png}
+  \caption{The transaction graph shown illustrates issuance and propagation of color \protect\footnotemark }
+  \label{fig:coloredcoins}
+\end{figure}
+\footnotetext{Chapter 9: Bitcoin as a Platform, Bitcoin and Cryptocurrency Technologies by  Arvind Narayanan, Joseph Bonneau, Edward Felten,
+Andrew Miller, Steven Goldfeder}
+
+\item Disadvantages of this scheme are
+\begin{itemize}
+\item We have to put in the unspendable marker output into every transaction.
+\item Miners don\textquotesingle t check the validity of colored coins, only the underlying bitcoins.
+\end{itemize}
+\end{itemize}
+\begin{thebibliography}{9}
+
+
+\bibitem{textbook1}
+Chapter 9: Bitcoin as a Platform,Pg: 237-264, Bitcoin and Cryptocurrency Technologies,by  Arvind Narayanan, Joseph Bonneau, Edward Felten,
+Andrew Miller, Steven Goldfeder
+
+\bibitem{b1} \url{https://coincentral.com/nfts-non-fungible-tokens/}
+
+\bibitem{b2} \url{https://guardtime.com/blog/6-reasons-why-encryption-isnt-working}
+
+
+\end{thebibliography}
+
+\bibliographystyle{apalike}
+\bibliography{dbt18}
+
+\end{document}
