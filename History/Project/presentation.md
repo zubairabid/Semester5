@@ -1,10 +1,10 @@
 ---
 title: 
-    - Zubair's Presentation
+    - Analysing the Economy of India through a study of Forest Produce 
 author: 
-    - Zubair Abid
+    - Zubair Abid (20171076)
 theme:
-    - Copenhagen
+    - Metropolis 
 ---
 
 # Section Heading
