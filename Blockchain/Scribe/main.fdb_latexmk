@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1572621919 "main.aux" "main.bbl" "main" 1572621919
+["bibtex main"] 1572621919 "main.aux" "main.bbl" "main" 1573506889
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1557554374 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "dbt18.bib" 1568056672 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "main.aux" 1568056672 1895 042fbf3b21c5a083d3d2452967b7cf78 "pdflatex"
+  "main.aux" 1572621919 1895 042fbf3b21c5a083d3d2452967b7cf78 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1572621919 "main.tex" "main.pdf" "main" 1572621919
-  "/dev/null" 1572607822 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1572621919 "main.tex" "main.pdf" "main" 1573506889
+  "/dev/null" 1573307187 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1557554374 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1557554374 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1557554374 3332 103109f5612ad95229751940c61aada0 ""
@@ -236,10 +236,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1557554374 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1566754696 3233970 ab845fc2b5afa9d5e4a65f288842af78 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1566754681 7979416 a436eb076e460024b0e5cba3041f59b1 ""
-  "main.aux" 1568056672 1895 042fbf3b21c5a083d3d2452967b7cf78 "pdflatex"
+  "main.aux" 1572621919 1895 042fbf3b21c5a083d3d2452967b7cf78 "pdflatex"
   "main.bbl" 1572621919 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
   "main.tex" 1568056672 10500 d7ba9a6a4ee92eacf0410d2e38479cb0 ""
   (generated)
   "main.log"
-  "main.aux"
   "main.pdf"
+  "main.aux"
