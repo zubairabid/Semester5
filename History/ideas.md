@@ -1,0 +1,5 @@
+- Look at the contribution of agriculture and forestry to the Indian economy
+- Do this for 1870-1920 and 1950-now
+- Check for correlation in the GDP and forestry. Should be none
+- My theory here is: forestry could potentially be used more to contribute to the economy, but due to conservation efforts that is not done.
+- 

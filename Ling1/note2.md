@@ -234,4 +234,33 @@ IPA chart in native language, from memory
 
 Reading the Pantcheva paper: https://moodle.iiit.ac.in/pluginfile.php/73176/mod_resource/content/1/Phonology-pantcheva.pdf
 
+# 04.11.2019
 
+- Language Universals
+- Language Loss
+    
+    Language loss in people who've lost facility due to accident, or something.
+
+    Looking at **Aphasia**. Specifically *Broca's* and *Wernicke's*
+- Language Development
+    
+    In children
+
+
+There's not understanding what one says but speaking fluently, and understanding but not able to respond.
+
+In case of Aphasic patients, we observe people talking very frequently but unable to understand what's being said. Broca's patients can comprehend, not be very fluent.
+
+- Comprehension
+- Production
+
+[Basically reading the page here for a bit](https://en.wikipedia.org/wiki/Aphasia)
+
+Broca: Mild difficulty in understanding, but fluency damages.
+Wernicke: Fluent, but difficulty understanding.
+
+Language Development and Language Loss are opposite to each other in all dimensions. 
+
+It goes from simple --> complex, and likewise the other way round.
+
+Imperatives are simple, Humour is complex and comes last.
