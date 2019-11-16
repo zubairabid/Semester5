@@ -1,0 +1,47 @@
+# Science 1 Syllabus
+
+- [ ] Measurements
+- [ ] Statistical Mechanics:
+    - [ ] Microstate space
+    - [ ] Isolated System
+    - [ ] Hamiltonian Function
+    - [ ] Hamilton's Equations
+    - [ ] Energy Ladder
+    - [ ] Boltzmann Entropy
+    - [ ] Calculations in an Isolated system (omega):
+        - [ ] 1D Harmonic
+        - [ ] Ideal Gas
+    - [ ] Closed System, and associated Calculations:
+        - [ ] Partition Function
+        - [ ] $<E>$ of 1D Harmonic
+        - [ ] $C_v$ inr elation to $<E>$ and variance
+        - [ ] Entropy for a closed system
+        - [ ] Derivation of Helmholtz Free Energy
+        - [ ] Ideal gas equation for Ideal Gas:
+            - [ ] Feynman's Trick
+        - [ ] Microscopic Definition of Pressure
+    - [ ] Virial Equation for Gases
+- [ ] Thermodynamics:
+    - [ ] Laws of Thermodynamics:
+        - [ ] First
+        - [ ] Second:
+            - [ ] Quasi Static Processes
+            - [ ] Clasius Inequality
+        - [ ] Third
+    - [ ] Spontaneity in:
+        - [ ] Heat Flow
+        - [ ] Gas Expansion
+    - [ ] Thermodynamic Potential:
+        - [ ] Potentials
+        - [ ] Rewriting 2nd law in terms of Thermodynamic Potentials
+        - [ ] What potential is minimised at what constant value
+        - [ ] Chemical Potential, Stability
+        - [ ] Phase Diagram, Phase Boundary, and Triple point
+    - [ ] Clapreyon Equation
+    - [ ] Maxwell's Relations
+- [ ] Lagrangian and Hamiltonian Mechanics:
+    - [ ] ? 
+- [ ] Mathematical Modelling - Random Walk and Diffusion:
+    - [ ] ?
+- [ ] Quantum Mechanics:
+    - [ ] 
