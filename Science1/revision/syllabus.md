@@ -40,7 +40,10 @@
     - [ ] Clapreyon Equation
     - [ ] Maxwell's Relations
 - [ ] Lagrangian and Hamiltonian Mechanics:
-    - [ ] ? 
+    - [ ] Lagrangian
+    - [ ] Deriving Lagrangian Equation of Motion
+    - [ ] Deriving Hamilton from the Lagrangian
+    - [ ] 
 - [ ] Mathematical Modelling - Random Walk and Diffusion:
     - [ ] ?
 - [ ] Quantum Mechanics:
