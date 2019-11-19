@@ -39,16 +39,26 @@
         - [ ] Phase Diagram, Phase Boundary, and Triple point
     - [ ] Clapreyon Equation
     - [ ] Maxwell's Relations
-- [ ] Lagrangian and Hamiltonian Mechanics:
-    - [ ] Lagrangian, the concept
-    - [ ] Derivation of the Lagrangian Equation of Motion
-    - [ ] Prove that $Hamiltonian = \sum \dot{q_i} \frac{\partial L}{\partial \dot{q_i}} - L$ 
+- [o] Lagrangian and Hamiltonian Mechanics:
+    - [X] Lagrangian, the concept
+    - [X] Derivation of the Lagrangian Equation of Motion
+    - [X] Prove that $Hamiltonian = \sum \dot{q_i} \frac{\partial L}{\partial \dot{q_i}} - L$ 
     - [ ] Examples:
         - [ ] Simple Pendulum
         - [ ] Double Pendulum
         - [ ] Sliding Pendulum
     - [ ] Time?
 - [ ] Mathematical Modelling - Random Walk and Diffusion:
-    - [ ] ?
+    - [ ] 1D Random Walk:
+        - [ ] Mean Displacement
+        - [ ] Mean Squared Displacement
+        - [ ] Derive Diffusion Equation
 - [ ] Quantum Mechanics:
-    - [ ] 
+    - [ ] Basics of psi
+    - [ ] Mathematical Operators:
+        - [ ] Momentum
+        - [ ] Kinetic Energy
+        - [ ] Hamiltonian
+        - [ ] Schrodinger's Equation
+    - [ ] Model: Quantum Particle, 1D box:
+        - [ ] Solving Schrodinger equation 
