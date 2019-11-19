@@ -40,10 +40,14 @@
     - [ ] Clapreyon Equation
     - [ ] Maxwell's Relations
 - [ ] Lagrangian and Hamiltonian Mechanics:
-    - [ ] Lagrangian
-    - [ ] Deriving Lagrangian Equation of Motion
-    - [ ] Deriving Hamilton from the Lagrangian
-    - [ ] 
+    - [ ] Lagrangian, the concept
+    - [ ] Derivation of the Lagrangian Equation of Motion
+    - [ ] Prove that $Hamiltonian = \sum \dot{q_i} \frac{\partial L}{\partial \dot{q_i}} - L$ 
+    - [ ] Examples:
+        - [ ] Simple Pendulum
+        - [ ] Double Pendulum
+        - [ ] Sliding Pendulum
+    - [ ] Time?
 - [ ] Mathematical Modelling - Random Walk and Diffusion:
     - [ ] ?
 - [ ] Quantum Mechanics:
