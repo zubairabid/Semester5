@@ -1,44 +1,44 @@
 # Science 1 Syllabus
 
 - [ ] Measurements
-- [ ] Statistical Mechanics:
-    - [ ] Microstate space
-    - [ ] Isolated System
-    - [ ] Hamiltonian Function
-    - [ ] Hamilton's Equations
-    - [ ] Energy Ladder
-    - [ ] Boltzmann Entropy
-    - [ ] Calculations in an Isolated system (omega):
-        - [ ] 1D Harmonic
-        - [ ] Ideal Gas
-    - [ ] Closed System, and associated Calculations:
-        - [ ] Partition Function
-        - [ ] $<E>$ of 1D Harmonic
-        - [ ] $C_v$ inr elation to $<E>$ and variance
+- [O] Statistical Mechanics:
+    - [X] Microstate space
+    - [X] Isolated System
+    - [X] Hamiltonian Function
+    - [X] Hamilton's Equations
+    - [X] Energy Ladder
+    - [X] Boltzmann Entropy
+    - [X] Calculations in an Isolated system (omega):
+        - [X] 1D Harmonic
+        - [X] Ideal Gas
+    - [o] Closed System, and associated Calculations:
+        - [X] Partition Function
+        - [X] $<E>$ of 1D Harmonic
+        - [X] $C_v$ inr elation to $<E>$ and variance
         - [ ] Entropy for a closed system
         - [ ] Derivation of Helmholtz Free Energy
         - [ ] Ideal gas equation for Ideal Gas:
             - [ ] Feynman's Trick
         - [ ] Microscopic Definition of Pressure
     - [ ] Virial Equation for Gases
-- [ ] Thermodynamics:
-    - [ ] Laws of Thermodynamics:
-        - [ ] First
-        - [ ] Second:
-            - [ ] Quasi Static Processes
-            - [ ] Clasius Inequality
-        - [ ] Third
-    - [ ] Spontaneity in:
-        - [ ] Heat Flow
-        - [ ] Gas Expansion
-    - [ ] Thermodynamic Potential:
-        - [ ] Potentials
-        - [ ] Rewriting 2nd law in terms of Thermodynamic Potentials
-        - [ ] What potential is minimised at what constant value
-        - [ ] Chemical Potential, Stability
-        - [ ] Phase Diagram, Phase Boundary, and Triple point
-    - [ ] Clapreyon Equation
-    - [ ] Maxwell's Relations
+- [X] Thermodynamics:
+    - [X] Laws of Thermodynamics:
+        - [X] First
+        - [X] Second:
+            - [X] Quasi Static Processes
+            - [X] Clasius Inequality
+        - [X] Third
+    - [X] Spontaneity in:
+        - [X] Heat Flow
+        - [X] Gas Expansion
+    - [X] Thermodynamic Potential:
+        - [X] Potentials
+        - [X] Rewriting 2nd law in terms of Thermodynamic Potentials
+        - [X] What potential is minimised at what constant value
+        - [X] Chemical Potential, Stability
+        - [X] Phase Diagram, Phase Boundary, and Triple point
+    - [X] Clapreyon Equation
+    - [X] Maxwell's Relations
 - [o] Lagrangian and Hamiltonian Mechanics:
     - [X] Lagrangian, the concept
     - [X] Derivation of the Lagrangian Equation of Motion
