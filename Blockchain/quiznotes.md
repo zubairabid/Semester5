@@ -57,7 +57,7 @@ Denominating some cash value to all goods, and using cash to buy and sell.
 - Mutually Exclusive
 - Birthday Paradox
     
-    **Central Idea**: $1-\textsc{P(no common birthdays)}$, $(1-\frac{k}{d}) < e^{\frac{-k}{d}}$
+    **Central Idea**: $1- \textsc{P(no common birthdays)}$, $(1-\frac{k}{d}) < e^{\frac{-k}{d}}$
 
 - Random Variables
     
@@ -224,4 +224,32 @@ verify(pk, sig, message) == true
 
 
 ## DSA
+
+
+
+
+# Storage
+
+## Address:
+
+- Base58 encoding
+- RIPEMD(SHA256(PK))
+- Vanity Address: Given $k$, need to do $58^k$ hashes
+    - for $k=5$ roughly 600 million hashes
+
+## Key Storage mechanisms
+
+### Paper Wallet
+
+### Brain Wallet
+
+## Hot and Cold Storage
+
+- Hierarchical Address generation
+- HD Key Generation: .
+
+Can we split the keys?
+
+## Secret Sharing
+
 
