@@ -26,29 +26,69 @@ theme:
 - Pedagogical grammars for teaching and standardization
 - 
 
-oof ouch whatta move
+
+# Language Modernization: Structural and Sociolinguistic Aspects (S. N. Sridhar)
+
+## Overview
+
+- Defines 'Modernization' of languages
+- Discusses 'Purist' vs 'Pragmatist' approaches to modernization, especially with Indian languages
+- Examines Macro and Micro strategies in language development
+- Takes Kannada as a case study
+
+# Modernization
+
+- With reference to 'other developed languages'
+- Developing languages import structures wholesale
+    - Show resource preferences
+    - Differ in linguistic processes employed to modernize, assimilate. Historical and Sociolinguistic factors too.
+
+# Modernization in Indian Languages
+
+- Lack of vocabulary for post-renaissance 
+- There is a push for move to Hindi/Regional languages (away from english). Modernization is necessary
+
+# Macro-strategies
+
+## Choice of Donor Language
+
+- Indigenization and Cryptocreolization
+- Purist Position
+    - Politico-cultural factors
+    - 'Efficiency' as a reason
+- Pragmatist position
+    - In Purism, there is more often than not no 'naturalness', is as opaque
+    - It becomes 'classicalization'
+    - Maintain terminology
+
+# Macro-strategies
+
+## Context and Choice of Resources
+
+# Micro-strategies
+
+Choices internal to grammar and vocabulary
+
+Combination of borrowing and hybridization is common - Japanese, especially.
+
+# Micro-strategies: Mechanisms used
+
+- Explicatory compounds *railu gadi (Hindi)*
+- Compounding *vicara sankirana (Kannada)*
+- Non-compositional compounds *white paper $\to$ sveta patra*
+- Reinterpretation *akasvani*
+
+# Effects of Modernization on Language
+
+- Expansion in size and range of vocabulary
+    - A part of Sanskrit derivational morphology has become part of Kannada word formation
+    - Generally, coexisting morphological systems
+- Multiple levels of lexical structure
+    - In Kannada, Sanskrit, Perso-Arabic borrowings ending with -a have become -e words
+    - English has not undergone this assimilation
+- Lexical expansion can strengthen word classes, like Kannada's adjectives
+- Hybrid compounds
+- Stem compounds
 
 
-# Point of Argument
 
-## Ew
-
-- List
-- Is 
-- Always
-- Cool
-
-# Conclusion
-
-## No
-
-- [x] enlisted bois
-- [ ] Did not do it well
-
-# Paper 2
-
-# Introduction
-
-# Point of Argument
-
-# Conclusion
