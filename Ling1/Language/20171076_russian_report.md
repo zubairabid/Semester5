@@ -16,7 +16,7 @@ With over 160 million native speakers, it is the 8th most natively-spoken langua
 
 ![Family tree of the Slavic Languages](./russtree_russ.jpg "Family tree of the Slavic Languages")
 
-![Competence of Russian in countries of the former Sovier Union](russian_usage.PNG)
+![Competence of Russian in countries of the former Sovier Union](./russian_usage.PNG)
 
 ![Areas where Russian is the majority language (medium blue) or a minority language (light blue)](./Idioma_ruso.PNG)
 
@@ -425,16 +425,3 @@ Relationship terms exist for:
 - Male/female distinction of second cousins
 - Step-family
 - Great grandparents/grandchildren
-
-# Cultural Significance
-
-## Literature
-
-- Pushkin, poetry
-- Nikolai Gogol, novelist
-- Leo Tolstoy
-- Anton Chekhov
-
-
-
-
