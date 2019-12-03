@@ -1,6 +1,4 @@
 ---
-title: NLP Project Presentation
-author: Akshay Goindani, Zubair Abid
 theme: Metropolis
 ---
 
@@ -27,6 +25,14 @@ theme: Metropolis
     - Multilingual Pseudo-Supervised Refinement (MPSR)
 - Outperforms both pivot-BWE and BWE-Direct
 - $O(N)$ complexity
+
+# Solution (cont.)
+
+## Overview of the Algorithm
+
+- MAT takes monolingual word embeddings and aligns them on the target embedding space
+- MPSR takes the solution provided by MAT and improves it using dictionaries of highly confident word pairs for every language pair
+
 
 # Definitions for the Architecture
 
@@ -55,8 +61,22 @@ Encoders $M_l$ are all orthogonal linear matrices
 ## Language Discriminators
 
 - For random pair $(l_i, l_j)$ convert vector from $S_i$ to $S_j$ (using $M_{l_i}$, $M_{l_j}^{-1}$ and via $T$)
-- Objective: confuse $D_j$
-- Formal definitions: TODO
+- Objective: confuse $D_j$, update it
+- Formally, objective function:
+
+    $J_d = E_{i-L}E_{x_i-S_i,x_j-S_j}(L_d(1,D_j(x_j))+L_d(0,D_j(M_j^TM_ix_i)))$
+
+# Multilingual Adversary Training (cont.)
+
+## Training M
+
+- Pick words and embed into target space
+- Based on loss, update parameters of M
+- Formal objective function of M:
+
+    $J_{M_i} = E_{j-L}E_{x_i-S_i,x_j-S_j}(L_d(1,D_j(M_j^TM_ix_i)))$
+
+For both iterations, the Loss function $L_d$ is cross entropy loss.
 
 # Multilingual Adversary Training (cont.)
 
@@ -72,6 +92,24 @@ Encoders $M_l$ are all orthogonal linear matrices
 - MAT gives reasonable quality embeddings, but not SOTA
 - May be due to noisy training signals from $D$
 - Improvement: Induce a dictionary of *highly confident word pairs* for each language pair, and use this
+
+# Multilingual Pseudo-Supervised Refinement (cont.)
+
+## Building dictionary
+
+For a language pair $(l_i, l_j)$, $Lex(l_i, l_j)$ is constructed from mutual nearest neighbours between $M_iE_i$ and $M_jE_j$, among most frequent 15K words of both languages.
+
+# Multilingual Pseudo-Supervised Refinement (cont.)
+
+## Algorithm
+
+- Sample $x_i, x_j$ from languages $l_i, l_j$
+- Embed into $t_i, t_j$
+- Update $M$ given the loss
+- Formal objective:
+
+    $J_r = E_{(i,j)-L^2}E_{(x_i,x_j)-Lex(i,j)}(L_r(M_ix_i,M_jx_j))$
+
 
 
 
